@@ -1,0 +1,123 @@
+.container {
+  padding: 1em 2em;
+  background-color: #f6f8fa;
+  border-bottom: 1px solid #d0d7de;
+
+  .flex {
+    display: flex;
+    justify-content: space-between;
+
+    .leftHeading {
+      width: 30%;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
+
+      .icon {
+        margin-right: 2%;
+        font-size: 80%;
+      }
+
+      .fbText {
+        margin-right: 1%;
+        color: #0969da;
+        font-weight: 600;
+        cursor: pointer;
+      }
+
+      .fbText:hover {
+        text-decoration: underline;
+      }
+
+      .reactText {
+        margin-left: 1%;
+        font-weight: 700;
+        color: #0969da;
+        cursor: pointer;
+      }
+
+      .reactText:hover {
+        text-decoration: underline;
+      }
+
+      .chip {
+        margin-left: 2%;
+      }
+    }
+
+    .rightHeading {
+      width: 30%;
+      display: flex;
+      justify-content: space-around;
+
+      @media only screen and (max-width: 600px) {
+        display: none;
+      }
+
+      .rightMenuItem {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        border: 1px solid #d0d7de;
+        border-radius: 6px;
+        padding: 4px 8px;
+        cursor: pointer;
+
+        .icon {
+          margin-right: 1%;
+        }
+
+        .menuText {
+          margin-left: 1%;
+          font-size: 0.8em;
+        }
+
+        .one {
+          border-right: 1px solid #d0d7de;
+          background-color: #f6f8fa;
+        }
+
+        .two {
+          background-color: #fff;
+        }
+      }
+    }
+
+    .tabs {
+      display: flex;
+      margin: 2em 1em;
+      margin-bottom: -1em;
+      font-size: 0.95em;
+
+      .tab {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 1em 1.5em;
+        padding-bottom: 1em;
+        margin-bottom: -0.2em;
+        box-sizing: content-box;
+        cursor: pointer;
+
+        .icon {
+          font-size: 1.1em;
+        }
+      }
+
+      .selectedTab {
+        font-weight: 600;
+        border-bottom: 2px solid #fd8c73;
+      }
+
+      .extraTabs {
+        @media only screen and (max-width: 600px) {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.icon {
+  color: #57606a;
+}
