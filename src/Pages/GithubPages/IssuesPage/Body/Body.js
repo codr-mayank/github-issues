@@ -4,6 +4,15 @@ import { Icon } from '@iconify/react';
 import './Body.scss';
 
 const Body = ({ issues }) => {
+  const rightMenu = [
+    { title: 'Author' },
+    { title: 'Label' },
+    { title: 'Projects', hide: true },
+    { title: 'Milestones', hide: true },
+    { title: 'Assignee' },
+    { title: 'Sort' }
+  ];
+
   const handleIssueClick = (issue) => {
     if (issue && issue.number) {
       window.open(`https://github.com/facebook/react/issues/${issue.number}`);
@@ -15,15 +24,6 @@ const Body = ({ issues }) => {
       window.open(`https://github.com/${issue.user.login}`);
     }
   }
-
-  const rightMenu = [
-    { title: 'Author' },
-    { title: 'Label' },
-    { title: 'Projects', hide: true },
-    { title: 'Milestones', hide: true },
-    { title: 'Assignee' },
-    { title: 'Sort' }
-  ]
 
   return (
     <div className='body'>
@@ -51,10 +51,10 @@ const Body = ({ issues }) => {
         <div className='issuesList'>
           {(issues || []).map((issue, index) => (
             <div key={index} className='issueItem'>
+              <Icon icon="la:dot-circle" className='icon' />
               <div className='issueItemData'>
                 <div className='issueDetails'>
                   <div className='issueTitle'>
-                    <Icon icon="la:dot-circle" className='icon' />
                     <div className='issueTitleChip' onClick={() => handleIssueClick(issue)}>
                       <span className='issueTitleText'>
                         {issue.title || '-'}

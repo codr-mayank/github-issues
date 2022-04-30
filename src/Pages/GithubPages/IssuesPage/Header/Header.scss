@@ -1,5 +1,5 @@
 .container {
-  padding: 1em 2em;
+  padding: 1% 2%;
   background-color: #f6f8fa;
   border-bottom: 1px solid #d0d7de;
 
@@ -8,18 +8,25 @@
     justify-content: space-between;
 
     .leftHeading {
-      width: 30%;
+      width: stretch;
       display: flex;
       align-items: center;
       font-size: 1.2em;
+      @media only screen and (max-width: 600px) {
+        padding: 3% 2%;
+      }
 
       .icon {
-        margin-right: 2%;
+        margin-right: 0.5%;
         font-size: 80%;
+        
+        @media only screen and (max-width: 600px) {
+          margin-right: 2%;
+        }
       }
 
       .fbText {
-        margin-right: 1%;
+        margin-right: 0.5%;
         color: #0969da;
         font-weight: 600;
         cursor: pointer;
@@ -30,10 +37,13 @@
       }
 
       .reactText {
-        margin-left: 1%;
+        margin-left: 0.5%;
         font-weight: 700;
         color: #0969da;
         cursor: pointer;
+        @media only screen and (max-width: 600px) {
+          margin-right: 2%;
+        }
       }
 
       .reactText:hover {
@@ -41,7 +51,7 @@
       }
 
       .chip {
-        margin-left: 2%;
+        margin-left: 1%;
       }
     }
 
@@ -85,22 +95,20 @@
 
     .tabs {
       display: flex;
-      margin: 2em 1em;
-      margin-bottom: -1em;
+      margin: 2% 1%;
+      margin-bottom: -1%;
       font-size: 0.95em;
 
       .tab {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
         padding: 1em 1.5em;
         padding-bottom: 1em;
-        margin-bottom: -0.2em;
+        margin-bottom: -0.1em;
         box-sizing: content-box;
         cursor: pointer;
 
         .icon {
           font-size: 1.1em;
+          vertical-align: top;
         }
       }
 

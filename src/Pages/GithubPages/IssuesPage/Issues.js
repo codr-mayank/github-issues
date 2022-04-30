@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from './Header/Header';
 import { getIssuesData } from '../../../ApiServices/ApiService';
 import Body from './Body/Body';
+import Footer from './Footer/Footer';
 
 const Issues = () => {
   const [issues, setIssues] = useState([]);
@@ -22,6 +23,7 @@ const Issues = () => {
     <div>
       <Header />
       <Body issues={issues} />
+      <Footer />
     </div>
   );
 };

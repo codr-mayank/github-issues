@@ -4,6 +4,17 @@ import Chip from '../../../../Components/common/Chip/Chip';
 import './Header.scss'
 
 const Header = () => {
+  const tabs = [
+    { title: 'Code', icon: 'bi:code' },
+    { title: 'Issues', icon: 'la:dot-circle', selected: true },
+    { title: 'Pull requests', icon: 'ion:git-pull-request-outline', hide: true },
+    { title: 'Actions', icon: 'fluent:play-circle-20-regular' },
+    { title: 'Projects', icon: 'bi:file-earmark-spreadsheet', hide: true },
+    { title: 'Wiki', icon: 'ph:book-open', hide: true },
+    { title: 'Security', icon: 'bi:shield-exclamation', hide: true },
+    { title: 'Insights', icon: 'bi:graph-up', hide: true },
+  ];
+
   const handleFacebookClick = () => {
     window.open(`https://github.com/facebook`);
   }
@@ -11,6 +22,7 @@ const Header = () => {
   const handleReactClick = () => {
     window.open(`https://github.com/facebook/react`);
   }
+
 
   return (
     <div className='container'>
@@ -56,38 +68,12 @@ const Header = () => {
       </div>
       <div className='flex'>
         <div className='tabs'>
-          <div className='tab'>
-            <Icon icon="bi:code" className='icon' />
-            Code
-          </div>
-          <div className='tab selectedTab'>
-            <Icon icon="la:dot-circle" className='icon' />
-            Issues
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="ion:git-pull-request-outline" className='icon' />
-            Pull requests
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="fluent:play-circle-20-regular" className='icon' />
-            Actions
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="bi:file-earmark-spreadsheet" className='icon' />
-            Projects
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="ph:book-open" className='icon' />
-            Wiki
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="bi:shield-exclamation" className='icon' />
-            Security
-          </div>
-          <div className='tab extraTabs'>
-            <Icon icon="bi:graph-up" className='icon' />
-            Insights
-          </div>
+          {(tabs || []).map(tab => (
+            <div className={`tab ${tab.selected ? 'selectedTab' : ''} ${tab.hide ? 'extraTabs' : ''}`}>
+              <Icon icon={tab.icon} className='icon' />
+              {tab.title}
+            </div>
+          ))}
         </div>
       </div>
     </div>
