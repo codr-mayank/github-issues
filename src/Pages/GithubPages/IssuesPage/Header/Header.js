@@ -15,14 +15,21 @@ const Header = () => {
     { title: 'Insights', icon: 'bi:graph-up', hide: true },
   ];
 
+  /**
+   * handleFacebookClick: Function to handle 'facebook' text click.
+   * It opens Facebook github page, in a separate tab.
+   */
   const handleFacebookClick = () => {
     window.open(`https://github.com/facebook`);
   }
 
+  /**
+   * handleReactClick: Function to handle 'react' text click.
+   * It opens Facebook's React repo github page, in a separate tab.
+   */
   const handleReactClick = () => {
     window.open(`https://github.com/facebook/react`);
   }
-
 
   return (
     <div className='container'>

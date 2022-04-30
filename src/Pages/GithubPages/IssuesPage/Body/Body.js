@@ -26,27 +26,37 @@ const Body = ({ issues }) => {
     })
   );
 
+  /**
+   * handleIssueClick: Function to handle issue item click.
+   * It opens issue github page, in a separate tab.
+   */
   const handleIssueClick = (issue) => {
     if (issue && issue.number) {
       window.open(`https://github.com/facebook/react/issues/${issue.number}`);
     }
   }
 
+  /**
+   * handleUsernameClick: Function to handle username click.
+   * It opens user's github profile page, in a separate tab.
+   */
   const handleUsernameClick = (issue) => {
     if (issue && issue.user && issue.user.login) {
       window.open(`https://github.com/${issue.user.login}`);
     }
   }
 
-  // issues = issues.filter((issue, index) => index !== 3);
-
+  /**
+   * getHeight: Function to get height of each item (element) in the issue list.
+   * 
+   * @param {number} index 
+   * @returns 
+   */
   const getHeight = index => {
-    console.log(index);
     let height = 90;
     if (document.getElementById(`id${index}`)) {
       height = document.getElementById(`id${index}`).clientHeight;
     }
-    console.log(height);
     return height + 10;
   }
 
@@ -73,48 +83,6 @@ const Body = ({ issues }) => {
             ))}
           </div>
         </div>
-        {/* <div className='issuesList'>
-          {(issues || []).map((issue, index) => (
-            <div key={index} className='issueItem'>
-              <Icon icon="la:dot-circle" className='icon' />
-              <div className='issueItemData'>
-                <div className='issueDetails'>
-                  <div className='issueTitle'>
-                    <div className='issueTitleChip' onClick={() => handleIssueClick(issue)}>
-                      <span className='issueTitleText'>
-                        {issue.title || '-'}
-                      </span>
-                      {(issue.labels || []).map((label, index) => (
-                        <Chip
-                          key={index}
-                          className='chip'
-                          variant='solid'
-                          backgroundColor={`#${label.color || '000'}`}
-                          text={label.name}
-                        />
-                      ))}
-                    </div>
-                  </div>
-                </div>
-                <div className='issueUser'>
-                  {`#${issue.number || '-'} opened by `}
-                  <span className='username' onClick={() => handleUsernameClick(issue)}>
-                    {(issue.user || {}).login || '-'}
-                  </span>
-                </div>
-              </div>
-              {!!(issue || {}).comments && (
-                <div className='comment'>
-                  <Icon icon="ion:chatbox-outline" className='icon' />
-                  <span className='commentCount'>
-                    {issue.comments}
-                  </span>
-                </div>
-              )}
-            </div>
-          ))}
-        </div> */}
-
         <div style={{ width: "100%", height: "100vh" }}>
           <AutoSizer>
             {({ width, height }) => (
