@@ -80,6 +80,7 @@
     }
 
     .issuesList {
+      height: 100px;
 
       .issueItem {
         padding: 0.5em 1em;
@@ -195,9 +196,9 @@
       // .issueItem>* {
       //   flex: 0 0 auto;
       // }
-      .issueItem:hover {
-        background-color: #f6f8fa;
-      }
+      // .issueItem:hover {
+      //   background-color: #f6f8fa;
+      // }
     }
   }
 }
